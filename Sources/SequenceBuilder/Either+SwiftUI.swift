@@ -25,13 +25,4 @@ extension Either: Identifiable where Left: Identifiable, Right: Identifiable, Le
     }
 }
 
-extension ForEach {
-    /// A convenience initializer that makes it easier to use arbitrary sequences in SwiftUI
-    public init<S: Sequence>(sequence: S, @ViewBuilder content: @escaping (Data.Element) -> Content)
-    where Data == [(Int, S.Element)], ID == Int, Content: View
-    {
-        self.init(Array(sequence.enumerated()), id: \.0, content: content)
-    }
-}
-
 #endif

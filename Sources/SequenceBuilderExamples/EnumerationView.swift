@@ -17,7 +17,7 @@ public struct EnumerationView<Content: Sequence>: View where Content.Element: Vi
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ForEach(sequence: content) { (index, content) in
+            ForEach(Array(content.enumerated()), id: \.offset) { (index, content) in
                 HStack(alignment: .top) {
                     Text("\(index + 1). ")
                     content
