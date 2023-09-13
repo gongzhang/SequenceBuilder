@@ -8,11 +8,10 @@ let package = Package(
     platforms: [.macOS(.v11), .iOS(.v14), .watchOS(.v6), .tvOS(.v13)],
     products: [
         .library(name: "SequenceBuilder", targets: ["SequenceBuilder"]),
-        .library(name: "SequenceBuilderExamples", targets: ["SequenceBuilderExamples"])
     ],
     dependencies: [],
     targets: [
         .target(name: "SequenceBuilder"),
-        .target(name: "SequenceBuilderExamples", dependencies: ["SequenceBuilder"])
+        .target(name: "SequenceBuilderExamples", dependencies: ["SequenceBuilder"]),
     ]
 )
